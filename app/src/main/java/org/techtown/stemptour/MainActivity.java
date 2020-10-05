@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     PartyActivity party;
     StoreActivity store;
     InfoActivity info;
+    GameActivity game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         party = new PartyActivity();
         store = new StoreActivity();
         info = new InfoActivity();
+        game = new GameActivity();
 
         //제일 처음 띄워줄 뷰
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout,choose).commitAllowingStateLoss();
@@ -62,9 +64,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void replaceFragment(Fragment fragment){
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_layout, fragment).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout,fragment).commitAllowingStateLoss();
+
+        //FragmentManager fragmentManager = getSupportFragmentManager();
+        //FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        //fragmentTransaction.replace(R.id.fragment_layout, fragment).commit();
     }
 
 }

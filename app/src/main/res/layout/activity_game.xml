@@ -4,9 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameActivity">
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="관광지"
+        android:textSize="20sp"
+        android:padding="15sp"/>
 
     <ListView
+        android:id="@+id/game_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

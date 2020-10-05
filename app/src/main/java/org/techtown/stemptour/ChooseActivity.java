@@ -4,12 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.ListFragment;
 
 import java.util.ArrayList;
@@ -56,12 +58,22 @@ public class ChooseActivity extends Fragment {
 
         adapter2.notifyDataSetChanged();
 
-        listView.setOnClickListener(new View.OnClickListener() {
+        listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ((MainActivity)getActivity()).replaceFragment(GameActivity.newInstance());
+                //MainActivity.replaceFragment(GameActivity.newInstance());
+
+                //getSupportFragmentManager().beginTransaction() .replace(R.id.fragment_layout,GameActivity.newInstance()).commitAllowingStateLoss();
+            }
+        });
+
+        /*listView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ((MainActivity)getActivity()).replaceFragment(GameActivity.newInstance());
             }
-        });
+        });*/
 
         return view;
     }

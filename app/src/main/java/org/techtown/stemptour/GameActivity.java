@@ -2,13 +2,13 @@ package org.techtown.stemptour;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -28,23 +28,23 @@ public class GameActivity extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.party, container, false);
+        View view = inflater.inflate(R.layout.activity_game, container, false);
 
         list = new ArrayList<String>();
-        listView= (ListView) view.findViewById(R.id.party_list);
+        listView= (ListView) view.findViewById(R.id.game_list);
         adapter =  new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, list);
         listView.setAdapter(adapter);
 
-        list.add("test1");
-        list.add("test2");
-        list.add("test3");
+        list.add("test1123");
+        list.add("test2123");
+        list.add("test3123");
 
         adapter.notifyDataSetChanged();
 
-        listView.setOnClickListener(new View.OnClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                ((MainActivity)getActivity()).replaceFragment(newInstance());
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ((MainActivity)getActivity()).replaceFragment(HintActivity.newInstance());
             }
         });
 
