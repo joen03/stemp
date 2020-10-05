@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/choose"
+        android:title="관광지"
+        android:icon="@drawable/home"/>
+    <item
+        android:id="@+id/party"
+        android:title="파티"
+        android:icon="@drawable/party"/>
+    <item
+        android:id="@+id/store"
+        android:title="상점"
+        android:icon="@drawable/store"/>
+    <item
+        android:id="@+id/info"
+        android:title="내정보"
+        android:icon="@drawable/info"/>
+
+</menu>
