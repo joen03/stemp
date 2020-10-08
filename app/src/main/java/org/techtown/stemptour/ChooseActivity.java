@@ -26,6 +26,8 @@ public class ChooseActivity extends Fragment {
     ListView listView2;
     private ArrayAdapter<String> adapter2;
 
+    public static Integer list_no;
+
     // 각각의 Fragment마다 Instance를 반환해 줄 메소드를 생성합니다.
     public static ChooseActivity newInstance() {
         return new ChooseActivity();
@@ -41,9 +43,9 @@ public class ChooseActivity extends Fragment {
         adapter =  new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, list);
         listView.setAdapter(adapter);
 
-        list.add("test1");
-        list.add("test2");
-        list.add("test3");
+        list.add("서울");
+        list.add("파주");
+        list.add("가평");
 
         adapter.notifyDataSetChanged();
 
@@ -52,15 +54,52 @@ public class ChooseActivity extends Fragment {
         adapter2 =  new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, list2);
         listView2.setAdapter(adapter2);
 
-        list2.add("test11");
-        list2.add("test21");
-        list2.add("test31");
+        list2.add("경복궁");
+        list2.add("창덕궁");
+        list2.add("덕수궁");
+        list2.add("창경궁");
 
         adapter2.notifyDataSetChanged();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                System.out.println("리스트 넘버1 : "+view);
+                System.out.println("리스트 넘버2 : "+i);
+                System.out.println("리스트 넘버3 : "+l);
+                if (i==0){
+                    list2 = new ArrayList<String>();
+                    list2.add("경복궁");
+                    list2.add("창덕궁");
+                    list2.add("덕수궁");
+                    list2.add("창경궁");
+                    adapter2 =  new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, list2);
+                    listView2.setAdapter(adapter2);
+                }else if (i==1){
+                    list2 = new ArrayList<String>();
+                    list2.add("임진각 평화 누리공원");
+                    list2.add("헤이리 예술마을");
+                    list2.add("지혜의 숲");
+                    list2.add("감악산 출렁다리");
+                    adapter2 =  new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, list2);
+                    listView2.setAdapter(adapter2);
+                }else if (i==2){
+                    list2 = new ArrayList<String>();
+                    list2.add("아침 고요 수목원");
+                    list2.add("에델바이스");
+                    list2.add("잣향기 푸른숲");
+                    adapter2 =  new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, list2);
+                    listView2.setAdapter(adapter2);
+                }
+
+            }
+        });
 
         listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ((MainActivity)getActivity()).list_num(i);
+                System.out.println("리스트 넘버 : "+((MainActivity)getActivity()).list_num);
                 ((MainActivity)getActivity()).replaceFragment(GameActivity.newInstance());
                 //MainActivity.replaceFragment(GameActivity.newInstance());
 

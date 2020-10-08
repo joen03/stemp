@@ -12,4 +12,64 @@
         android:textSize="25sp"
         android:padding="15sp"/>
 
+    <LinearLayout
+        android:id="@+id/st_ln"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/info_title">
+
+        <TextView
+            android:id="@+id/st_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="홈"
+            android:textSize="25sp"
+            android:padding="15sp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/st_bast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="베스트"
+            android:textSize="25sp"
+            android:padding="15sp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/st_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="브랜드"
+            android:textSize="25sp"
+            android:padding="15sp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/st_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="25sp"
+        android:padding="15sp"
+        android:layout_below="@+id/st_ln"
+        android:background="#8f24"
+        android:visibility="visible"/>
+    <TextView
+        android:id="@+id/st_main2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="25sp"
+        android:padding="15sp"
+        android:layout_below="@+id/st_ln"
+        android:background="#8fd4"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/st_main3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="25sp"
+        android:padding="15sp"
+        android:layout_below="@+id/st_ln"
+        android:background="#8f4"
+        android:visibility="gone"/>
+
 </RelativeLayout>

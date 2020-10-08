@@ -27,6 +27,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
+
+import java.io.IOException;
+import java.io.InputStream;
+
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
@@ -39,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     private RewardedVideoAd mRewardedVideoAd;
 
     static int hint_number;
+
+    public static int list_num;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,10 +94,36 @@ public class MainActivity extends AppCompatActivity {
         initRewardedVideoAd();
 
         //로그인 정보가 없으면 로그인 페이지로 연결
-        /*Intent login_intent= new Intent(this, LoginActivity.class);
+        Intent login_intent= new Intent(this, LoginActivity.class);
         startActivity(login_intent);
 
-        finish();*/
+        finish();
+    }
+
+    public static void list_num(int a){
+        list_num=a;
+    }
+
+    private String getJsonString()
+    {
+        String json = "";
+
+        try {
+            InputStream is = getAssets().open("tour.json");
+            int fileSize = is.available();
+
+            byte[] buffer = new byte[fileSize];
+            is.read(buffer);
+            is.close();
+
+            json = new String(buffer, "UTF-8");
+        }
+        catch (IOException ex)
+        {
+            ex.printStackTrace();
+        }
+
+        return json;
     }
 
     public void loadRewardedVideoAd() {

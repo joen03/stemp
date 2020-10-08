@@ -22,6 +22,7 @@ public class PartyActivity extends Fragment {
 
     Spinner sn_ad1;
     Spinner sn_ad2;
+    Spinner sn_ad3;
 
     @Nullable
     @Override
@@ -33,14 +34,15 @@ public class PartyActivity extends Fragment {
         adapter =  new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, list);
         listView.setAdapter(adapter);
 
-        list.add("test1");
-        list.add("test2");
-        list.add("test3");
+        list.add("2인팟 ㄱㄱ");
+        list.add("정보공유 좀");
+        list.add("4명이서 돌아다닐 사람");
 
         adapter.notifyDataSetChanged();
 
         sn_ad1 = view.findViewById(R.id.sn_ad1);
         sn_ad2 = view.findViewById(R.id.sn_ad2);
+        sn_ad3 = view.findViewById(R.id.sn_ad3);
 
         ArrayAdapter ad_Adapter1 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.date_address1, android.R.layout.simple_spinner_item);

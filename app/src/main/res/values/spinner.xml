@@ -2,23 +2,35 @@
 <resources>
 
     <string-array name="date_address1">
-        <item>1</item>
-        <item>2</item>
+        <item>서울 특별시</item>
+        <item>파주</item>
+        <item>가평</item>
     </string-array>
 
     <string-array name="date_address2">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
+        <item>경복궁</item>
+        <item>창덕궁</item>
+        <item>덕수궁</item>
+        <item>창경궁</item>
+        <item>서울 한양도성</item>
+        <item>흥인지문</item>
+        <item>숭례문</item>
+        <item>운현궁</item>
+        <item>경희궁</item>
+        <item>여의도 한강공원</item>
+        <item>서울대공원</item>
+    </string-array>
+
+    <string-array name="date_gbg">
+        <item>근정전</item>
+        <item>경회루</item>
+        <item>향원정</item>
+    </string-array>
+
+    <string-array name="date_cdg">
+        <item>인정전</item>
+        <item>부용정</item>
+        <item>돈화문</item>
     </string-array>
 
     <string-array name="date_gender">
