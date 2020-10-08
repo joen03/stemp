@@ -7,4 +7,8 @@
     <string name="kakao_login">kakao login</string>
     <string name="facebook_login">facebook login</string>
     <string name="app_name">Stemp Tour</string>
+    <string name="google_admob_app_id">ca-app-pub-8200810878498210~2202369818</string>
+
+    <string name="google_rewarded_ad_id">ca-app-pub-3940256099942544/5224354917</string>
+
 </resources>
